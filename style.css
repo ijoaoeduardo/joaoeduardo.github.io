@@ -32,7 +32,7 @@ section h2 {
 }
 
 .projeto {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .projeto h3 {
@@ -52,4 +52,27 @@ a:hover {
 ul {
   list-style-type: square;
   padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+img {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
 }
