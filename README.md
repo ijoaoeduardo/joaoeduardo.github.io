@@ -70,4 +70,11 @@ Bem-vindo(a) ao meu portfólio acadêmico! Aqui você encontra uma seleção dos
 
 ---
 
+## 🌐 Portfólio Online
+
+Você também pode visualizar meu portfólio em formato de site:
+
+👉 [ijoaoeduardo.github.io/joaoeduardo.github.io](https://ijoaoeduardo.github.io/joaoeduardo.github.io/)
+
 Obrigado pela visita! Sinta-se à vontade para explorar meus projetos e entrar em contato. 😊
+
