@@ -1,80 +1,99 @@
-# 👨‍💻 Portfólio Acadêmico - João Eduardo
+# 👨‍💻 Portfólio — João Eduardo
 
-Bem-vindo(a) ao meu portfólio acadêmico! Aqui você encontra uma seleção dos projetos que desenvolvi durante a graduação em **Sistemas de Informação na PUC Minas**. O objetivo é demonstrar minhas competências técnicas, meu crescimento como estudante e minha paixão por tecnologia e impacto social.
+Bem-vindo(a) ao meu portfólio! Aqui você encontra informações sobre minha trajetória profissional, projetos acadêmicos e competências técnicas.
 
 ---
 
 ## 🧑 Sobre mim
 
-🎓 Estudante de Sistemas de Informação na PUC Minas (4º período)  
-💻 Apaixonado por desenvolvimento web, usabilidade, inclusão digital e soluções com impacto social  
-🧠 Buscando oportunidades de estágio na área de tecnologia para aplicar meus conhecimentos e crescer profissionalmente  
-
-📚 **Atualmente estudando:**
-
-- Engenharia de Requisitos de Software  
-- Fundamentos de Engenharia de Software  
-- Fundamentos de Redes de Computadores  
-- Programação Modular  
-- Teste e Manutenção de Software  
-- Design de Interação ( Design Centrado no Usuário )
-- Competência Comportamental: Liderança  
-- Filosofia: Razão e Modernidade
+- 🎓 Estudante de **Sistemas de Informação** na PUC Minas (5º período) — Previsão: Dez/2027
+- 💼 **Estagiário de Engenharia de Software** no PagBank — Squad de Engenharia de Cobrança
+- 💻 Foco em **desenvolvimento backend**, com vivência prática em ambiente corporativo
+- 🧠 Interesse em backend, infraestrutura, qualidade, segurança e produto
 
 ---
 
-## 💼 Projetos em Destaque
+## 💼 Experiência Atual
 
-### 📌 [InfoClube](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2025-1-pe3-t1-infoclub)
-> Um site inclusivo para ajudar a terceira idade a identificar fake news e golpes digitais.
+**Estagiário de Engenharia de Software — Engenharia de Cobrança**
+*PagBank · set/2025 – atual*
 
-- Tecnologias: HTML, CSS, JavaScript
-- Destaques: login com diferenciação de perfis, glossário digital, quiz educativo
-- Responsável pelo layout, estrutura das páginas e lógica de acesso
-
----
-
-### 🐶 [Sistema de Adoção de Animais](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe2-t3-pmv-si-2024-2-pe2-t3-g2-app-pet)
-> Modelagem completa de um sistema de adoção com fluxo de processos, avaliação de adotantes e banco de dados.
-
-- Ferramentas: Bizagi, draw.io, Sydle One
-- Atuei na modelagem AS-IS e TO-BE, criação do DER e organização do fluxo lógico de dados
+- Desenvolvimento e sustentação de sistemas backend em Java
+- Contato com APIs REST, Docker, Linux e configuração de ambientes
+- Cerimônias ágeis: dailies, refinamentos, plannings e retrospectivas
+- Documentação técnica e gestão de demandas com Jira, Confluence e Kanban
+- Versionamento com Git: branches, features, merges e análise de PRs
+- Apoio em cards de vulnerabilidade e segurança (Snyk)
+- Testes e validações com Swagger, Postman e debug no IntelliJ
+- Criação de documentação para onboarding de novos integrantes
+- Participação no Hackathon PagTalents 2026 — solução de IA para redução de churn
 
 ---
 
-## 🧠 Habilidades Técnicas
+## 🛠️ Habilidades Técnicas
 
-- **Linguagens:** HTML, CSS, JavaScript  
-- **Banco de dados:** MongoDB  
-- **Ferramentas:** Git, GitHub, VS Code, draw.io, Bizagi  
-- **Modelagem:** BPMN, DER, E-R  
-- **Soft Skills:** comunicação, empatia, proatividade, trabalho em equipe
+| Categoria | Tecnologias |
+|---|---|
+| **Backend e Integrações** | Java, Node.js, APIs REST, SQL |
+| **Banco de Dados** | PostgreSQL, MySQL, MongoDB, modelagem relacional (DER) |
+| **DevOps e Infraestrutura** | Docker, Git, Linux (terminal/CLI), AWS EC2, noções de Kubernetes |
+| **Qualidade e Testes** | Testes unitários, integrados e funcionais, SonarQube, análise de PRs |
+| **Monitoramento** | Grafana, Zabbix, troubleshooting e análise de incidentes |
+| **Ferramentas e Gestão** | IntelliJ IDEA, Jira, Confluence, Kanban, Sydle One, Draw.io |
+| **Metodologias** | Scrum, Kanban, BPMN, documentação técnica, integração contínua |
+| **Segurança** | Snyk, noções de segurança da informação e proteção de dados |
+
+---
+
+## 🚀 Projetos Acadêmicos
+
+### 🌐 InfoClube
+Aplicação web voltada à inclusão digital e segurança da informação para a terceira idade.
+
+- Combate à desinformação, identificação de golpes virtuais e boas práticas digitais
+- Jogos interativos, glossário e sistema de comentários
+- **Tecnologias:** HTML, CSS, JavaScript, Bootstrap, MongoDB
+- 🔗 [Ver repositório](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe1-t2-desinformacaodigital)
+
+### 🐾 Appet — Sistema de Adoção de Animais
+Modelagem e estruturação de solução para apoio a instituições de proteção animal.
+
+- Modelagem de processos AS-IS e TO-BE em BPMN
+- Diagrama entidade-relacionamento (DER)
+- Estruturação de fluxo automatizado
+- **Ferramentas:** Sydle One, Draw.io
 
 ---
 
 ## 📜 Certificados
 
-- Lógica de Programação – Fundação Bradesco – 20h  
-- Inglês Básico – 🔧 CNI
-- Informática Básica – CNI  
-- Web Design – CNI  
-- Montagem e Manutenção de Computadores – CNI
+- Segurança da Informação e Proteção de Dados (treinamentos corporativos)
+- Processos Administrativos — SESI SENAI Betim
+- Web Design Básico — CNI
+- Montagem e Manutenção de Computadores — CNI
+- Pacote Office Básico — CNI
+- Informática Básica — CNI
+
+---
+
+## 🌐 Idiomas
+
+- Inglês — Intermediário (CNI)
 
 ---
 
 ## 📫 Contato
 
-- 📧 Email: joao.edu5566@gmail.com  
-- 💼 LinkedIn: [linkedin.com/in/ijoaoeduardo](https://linkedin.com/in/ijoaoeduardo)  
-- 💻 GitHub: [github.com/ijoaoeduardo](https://github.com/ijoaoeduardo)
+- 💼 [LinkedIn](https://www.linkedin.com/in/ijoaoeduardo/)
+- 💻 [GitHub](https://github.com/ijoaoeduardo)
+- 📧 joao.edu5566@gmail.com
 
 ---
 
 ## 🌐 Portfólio Online
 
-Você também pode visualizar meu portfólio em formato de site:
+👉 [ijoaoeduardo.github.io](https://ijoaoeduardo.github.io/joaoeduardo.github.io)
 
-👉 [ijoaoeduardo.github.io/joaoeduardo.github.io](https://ijoaoeduardo.github.io/joaoeduardo.github.io/)
+---
 
-Obrigado pela visita! Sinta-se à vontade para explorar meus projetos e entrar em contato. 😊
-
+> *"Busco evoluir tecnicamente e contribuir com soluções organizadas, bem documentadas e orientadas à melhoria contínua."*
