@@ -1,74 +1,316 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio Acadêmico - João Eduardo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Eduardo | Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: #333; background: #f8f9fa; line-height: 1.6; }
+
+        /* NAV */
+        nav { position: fixed; top: 0; width: 100%; background: rgba(31,78,121,0.97); backdrop-filter: blur(8px); z-index: 100; padding: 0.8rem 0; }
+        nav .container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1.5rem; }
+        nav .logo { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+        nav .logo span { color: #64b5f6; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav ul li a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: #64b5f6; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, #1F4E79 0%, #2d6da3 50%, #1a3d5c 100%); color: #fff; padding: 8rem 1.5rem 4rem; text-align: center; }
+        .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .hero .subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.8rem; font-weight: 400; }
+        .hero .location { font-size: 0.95rem; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; }
+        .hero .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .hero .links a { display: inline-block; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .hero .links .btn-primary { background: #64b5f6; color: #1F4E79; }
+        .hero .links .btn-primary:hover { background: #90caf9; }
+        .hero .links .btn-outline { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; }
+        .hero .links .btn-outline:hover { border-color: #64b5f6; color: #64b5f6; }
+
+        /* SECTIONS */
+        section { padding: 3.5rem 1.5rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .section-title { font-size: 1.5rem; font-weight: 700; color: #1F4E79; margin-bottom: 0.3rem; }
+        .section-line { width: 50px; height: 3px; background: #64b5f6; border-radius: 2px; margin-bottom: 1.8rem; }
+        .bg-white { background: #fff; }
+
+        /* SOBRE */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .about-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.93rem; padding: 0.6rem 0; }
+        .about-item .icon { font-size: 1.2rem; flex-shrink: 0; }
+
+        /* EXPERIENCIA */
+        .exp-card { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #1F4E79; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .exp-card h3 { font-size: 1.05rem; color: #1F4E79; margin-bottom: 0.2rem; }
+        .exp-card .company { font-size: 0.92rem; color: #666; margin-bottom: 0.8rem; }
+        .exp-card ul { padding-left: 1.2rem; }
+        .exp-card ul li { font-size: 0.88rem; margin-bottom: 0.35rem; color: #444; }
+
+        /* SKILLS */
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+        .skill-card { background: #fff; border-radius: 8px; padding: 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .skill-card h4 { font-size: 0.9rem; color: #1F4E79; margin-bottom: 0.4rem; font-weight: 600; }
+        .skill-card p { font-size: 0.85rem; color: #555; line-height: 1.5; }
+
+        /* PROJETOS */
+        .project-card { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-top: 3px solid #64b5f6; }
+        .project-card h3 { font-size: 1.05rem; color: #1F4E79; margin-bottom: 0.3rem; }
+        .project-card .desc { font-size: 0.9rem; color: #555; margin-bottom: 0.6rem; }
+        .project-card ul { padding-left: 1.2rem; margin-bottom: 0.6rem; }
+        .project-card ul li { font-size: 0.85rem; color: #444; margin-bottom: 0.25rem; }
+        .project-card .tech { font-size: 0.82rem; color: #1F4E79; font-weight: 500; }
+        .project-card a { color: #1F4E79; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+        .project-card a:hover { color: #64b5f6; }
+
+        /* CERTIFICADOS */
+        .cert-list { list-style: none; }
+        .cert-list li { padding: 0.5rem 0; font-size: 0.9rem; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem; }
+        .cert-list li:last-child { border-bottom: none; }
+
+        /* CONTATO */
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .contact-card { background: #fff; border-radius: 8px; padding: 1.3rem; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .contact-card .icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+        .contact-card h4 { font-size: 0.85rem; color: #1F4E79; margin-bottom: 0.3rem; }
+        .contact-card a, .contact-card p { font-size: 0.82rem; color: #555; text-decoration: none; word-break: break-all; }
+        .contact-card a:hover { color: #1F4E79; }
+
+        /* FOOTER */
+        footer { background: #1F4E79; color: rgba(255,255,255,0.8); text-align: center; padding: 2rem 1.5rem; }
+        footer .quote { font-style: italic; font-size: 0.95rem; margin-bottom: 0.8rem; color: rgba(255,255,255,0.9); }
+        footer .copy { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav ul { gap: 0.8rem; }
+            nav ul li a { font-size: 0.78rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero .subtitle { font-size: 0.95rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            nav .container { flex-direction: column; gap: 0.5rem; }
+            nav ul { gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 7rem 1rem 3rem; }
+            .hero h1 { font-size: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="/image/Imagem do WhatsApp de 2025-06-19 à(s) 19.12.02_d5f92695.jpg" alt="João Eduardo" style="width:160px;border-radius:100%;margin-bottom:15px;">
-    <h1>João Eduardo</h1>
-    <p>Estudante de Sistemas de Informação | PUC Minas</p>
-  </header>
 
-  <section>
-    <h2>Sobre Mim</h2>
-    <p>Sou estudante de Sistemas de Informação na PUC Minas, apaixonado por tecnologia e inclusão digital. Tenho experiência em projetos acadêmicos voltados à usabilidade, acessibilidade e ao combate à desinformação. Busco oportunidades para aplicar meus conhecimentos em ambientes colaborativos, com foco em aprendizado constante.</p>
-  </section>
-
-  <section>
-    <h2>Projetos Acadêmicos</h2>
-
-    <div class="projeto">
-      <h3>InfoClube</h3>
-      <p>Plataforma inclusiva voltada à terceira idade com foco no combate a golpes digitais e fake news.</p>
-      <p><strong>Função no projeto:</strong> Desenvolvimento de páginas HTML/CSS/, lógica de login e diferenciação de usuários.</p>
-      <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript, GitHub, MongoDB</p>
-      <a href="https://icei-puc-minas-pmv-si.github.io/pmv-si-2025-1-pe3-t1-infoclub/" target="_blank">Ver projeto</a>
-      <br><br>
-      <img src="/image/Captura de tela 2025-06-19 202112.png" alt="InfoClube - Página inicial" style="width:100%;border-radius:8px;">
+<!-- NAV -->
+<nav>
+    <div class="container">
+        <a href="#" class="logo">João<span>Eduardo</span></a>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
     </div>
+</nav>
 
-    <div class="projeto">
-      <h3>Sistema de Adoção de Animais</h3>
-      <p>Projeto completo de modelagem e documentação de um sistema de adoção consciente de animais, integrando ONGs, processos e banco de dados.</p>
-      <p><strong>Função no projeto:</strong> Modelagem dos processos AS-IS e TO-BE, DER e lógica de dados.</p>
-      <p><strong>Tecnologias:</strong> BPMN (Bizagi), draw.io, Sydle One</p>
-      <a href="/image/393525448-3d31c510-f66f-4ec2-835f-9cea0234d004.mp4" target="_blank">Vídeo do Projeto</a>
-      <br><br>
-      <img src="/image/Captura de tela 2025-06-19 205044.png" alt="Sistema de Adoção - Modelagem" style="width:100%;border-radius:8px;">
+<!-- HERO -->
+<section class="hero">
+    <h1>João Eduardo da Silva Rocha</h1>
+    <p class="subtitle">Estagiário de Engenharia de Software no PagBank | Backend Java</p>
+    <p class="location">📍 Betim/MG, Brasil</p>
+    <div class="links">
+        <a href="https://www.linkedin.com/in/ijoaoeduardo/" target="_blank" class="btn-primary">💼 LinkedIn</a>
+        <a href="https://github.com/ijoaoeduardo" target="_blank" class="btn-outline">💻 GitHub</a>
+        <a href="mailto:joao.edu5566@gmail.com" class="btn-outline">📧 E-mail</a>
     </div>
-  </section>
+</section>
 
-  <section>
-    <h2>Habilidades</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>MongoDB, Git, GitHub</li>
-      <li>BPMN, Modelagem ER, draw.io</li>
-      <li>Boa comunicação, empatia, trabalho em equipe</li>
-    </ul>
-  </section>
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="container">
+        <h2 class="section-title">Sobre mim</h2>
+        <div class="section-line"></div>
+        <p style="font-size:0.95rem; color:#444; margin-bottom:1.2rem;">
+            Estudante de Sistemas de Informação na PUC Minas e Estagiário de Engenharia de Software no PagBank,
+            atuando na squad de Engenharia de Cobrança. Tenho foco em desenvolvimento backend, com vivência prática
+            em ambiente corporativo real. Valorizo aprendizado contínuo, documentação técnica e colaboração.
+        </p>
+        <div class="about-grid">
+            <div class="about-item"><span class="icon">🎓</span><span>Sistemas de Informação — PUC Minas (5º período) · Previsão: Dez/2027</span></div>
+            <div class="about-item"><span class="icon">💼</span><span>Estagiário de Engenharia de Software — PagBank</span></div>
+            <div class="about-item"><span class="icon">💻</span><span>Foco em desenvolvimento backend com Java</span></div>
+            <div class="about-item"><span class="icon">🧠</span><span>Interesse em backend, infra, qualidade, segurança e produto</span></div>
+        </div>
+    </div>
+</section>
 
-  <section>
-    <h2>Certificados</h2>
-    <ul>
-      <li>Lógica de Programação – Fundação Bradesco – 20h</li>
-      <li>Inglês Avançado – CNI </li>
-    </ul>
-  </section>
+<!-- EXPERIENCIA -->
+<section id="experiencia" class="bg-white">
+    <div class="container">
+        <h2 class="section-title">Experiência</h2>
+        <div class="section-line"></div>
 
-  <section>
-    <h2>Contato</h2>
-    <p><strong>Email:</strong> joao.edu5566@gmail.com</p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ijoaoeduardo/" target="_blank">linkedin.com/in/ijoaoeduardo</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/ijoaoeduardo/joaoeduardo.github.io" target="_blank">github.com/ijoaoeduardo</a></p>
-  </section>
+        <div class="exp-card">
+            <h3>Estagiário de Engenharia de Software — Engenharia de Cobrança</h3>
+            <p class="company">PagBank · set/2025 – atual · Remoto</p>
+            <ul>
+                <li>Desenvolvimento e sustentação de sistemas backend em Java</li>
+                <li>Contato com APIs REST, Docker, Linux e configuração de ambientes</li>
+                <li>Cerimônias ágeis: dailies, refinamentos, plannings e retrospectivas</li>
+                <li>Documentação técnica e gestão de demandas com Jira, Confluence e Kanban</li>
+                <li>Versionamento com Git: branches, features, merges e análise de PRs</li>
+                <li>Apoio em cards de vulnerabilidade e segurança (Snyk)</li>
+                <li>Testes e validações com Swagger, Postman e debug no IntelliJ</li>
+                <li>Criação de documentação para onboarding de novos integrantes</li>
+                <li>Participação no Hackathon PagTalents 2026 — solução de IA para redução de churn</li>
+            </ul>
+        </div>
 
-  <footer>
-    <p>© 2025 João Eduardo | Portfólio Acadêmico</p>
-  </footer>
+        <div class="exp-card">
+            <h3>Experiência Administrativa</h3>
+            <p class="company">Grupo Sinalmig · fev/2021 – ago/2025 · Sarzedo/MG</p>
+            <ul>
+                <li>Evolução de Aprendiz → Auxiliar → Assistente Administrativo</li>
+                <li>Gestão de contratos, controle de custos logísticos e notas fiscais</li>
+                <li>Organização de processos, atendimento interno e apoio financeiro/fiscal</li>
+            </ul>
+        </div>
+
+        <div class="exp-card">
+            <h3>Aprendiz</h3>
+            <p class="company">DENSO Sistemas Térmicos do Brasil · fev/2020 – dez/2020 · Betim/MG</p>
+            <ul>
+                <li>Apoio nas rotinas administrativas e organização documental</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="section-line"></div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>☕ Backend e Integrações</h4>
+                <p>Java, Node.js, APIs REST, SQL, desenvolvimento e sustentação de sistemas</p>
+            </div>
+            <div class="skill-card">
+                <h4>🗄️ Banco de Dados</h4>
+                <p>PostgreSQL, MySQL, MongoDB, modelagem relacional (DER)</p>
+            </div>
+            <div class="skill-card">
+                <h4>🐳 DevOps e Infraestrutura</h4>
+                <p>Docker, Git, Linux (terminal/CLI), AWS EC2, noções de Kubernetes</p>
+            </div>
+            <div class="skill-card">
+                <h4>✅ Qualidade e Testes</h4>
+                <p>Testes unitários, integrados e funcionais, SonarQube, análise de PRs</p>
+            </div>
+            <div class="skill-card">
+                <h4>📊 Monitoramento</h4>
+                <p>Grafana, Zabbix, troubleshooting e análise de incidentes</p>
+            </div>
+            <div class="skill-card">
+                <h4>🛠️ Ferramentas e Gestão</h4>
+                <p>IntelliJ IDEA, Jira, Confluence, Kanban, Sydle One, Draw.io</p>
+            </div>
+            <div class="skill-card">
+                <h4>📋 Metodologias</h4>
+                <p>Scrum, Kanban, BPMN, documentação técnica, integração contínua, GitFlow</p>
+            </div>
+            <div class="skill-card">
+                <h4>🔒 Segurança</h4>
+                <p>Snyk, noções de segurança da informação, proteção de dados</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos" class="bg-white">
+    <div class="container">
+        <h2 class="section-title">Projetos Acadêmicos</h2>
+        <div class="section-line"></div>
+
+        <div class="project-card">
+            <h3>🌐 InfoClube</h3>
+            <p class="desc">Aplicação web voltada à inclusão digital e segurança da informação para a terceira idade.</p>
+            <ul>
+                <li>Combate à desinformação, identificação de golpes virtuais e boas práticas digitais</li>
+                <li>Jogos interativos, glossário e sistema de comentários</li>
+                <li>Interface acessível e intuitiva para o público-alvo</li>
+            </ul>
+            <p class="tech">Tecnologias: HTML, CSS, JavaScript, Bootstrap, MongoDB</p>
+            <p style="margin-top:0.4rem;"><a href="https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe1-t2-desinformacaodigital" target="_blank">🔗 Ver repositório</a></p>
+        </div>
+
+        <div class="project-card">
+            <h3>🐾 Appet — Sistema de Adoção de Animais</h3>
+            <p class="desc">Modelagem e estruturação de solução para apoio a instituições de proteção animal.</p>
+            <ul>
+                <li>Modelagem de processos AS-IS e TO-BE em BPMN</li>
+                <li>Diagrama entidade-relacionamento (DER)</li>
+                <li>Estruturação de fluxo automatizado</li>
+            </ul>
+            <p class="tech">Ferramentas: Sydle One, Draw.io</p>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICADOS -->
+<section id="certificados">
+    <div class="container">
+        <h2 class="section-title">Certificados e Idiomas</h2>
+        <div class="section-line"></div>
+        <ul class="cert-list">
+            <li>📜 Segurança da Informação e Proteção de Dados (treinamentos corporativos)</li>
+            <li>📜 Processos Administrativos — SESI SENAI Betim</li>
+            <li>📜 Web Design Básico — CNI</li>
+            <li>📜 Montagem e Manutenção de Computadores — CNI</li>
+            <li>📜 Pacote Office Básico — CNI</li>
+            <li>📜 Informática Básica — CNI</li>
+            <li>🌍 Inglês — Intermediário (CNI)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="bg-white">
+    <div class="container">
+        <h2 class="section-title">Contato</h2>
+        <div class="section-line"></div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="icon">💼</div>
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/ijoaoeduardo/" target="_blank">linkedin.com/in/ijoaoeduardo</a>
+            </div>
+            <div class="contact-card">
+                <div class="icon">💻</div>
+                <h4>GitHub</h4>
+                <a href="https://github.com/ijoaoeduardo" target="_blank">github.com/ijoaoeduardo</a>
+            </div>
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h4>E-mail</h4>
+                <a href="mailto:joao.edu5566@gmail.com">joao.edu5566@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p class="quote">"Busco evoluir tecnicamente e contribuir com soluções organizadas, bem documentadas e orientadas à melhoria contínua."</p>
+    <p class="copy">© 2026 João Eduardo da Silva Rocha. Feito com HTML e CSS.</p>
+</footer>
+
 </body>
 </html>
